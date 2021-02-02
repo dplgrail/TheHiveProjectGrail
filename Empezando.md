@@ -89,4 +89,37 @@ TriggeredBy: ● docker.socket
      CGroup: /system.slice/docker.service
              └─24321 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
              
-Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We’ll explore how to use the docker command later in this tutorial.
+Installing Docker
+
+Now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We’ll explore how to use the docker command later in this tutorial.
+Installing Docker Compose
+To make sure we obtain the most updated stable version of Docker Compose, we’ll download this software from its official Github repository.
+
+First, confirm the latest version available in their releases page. At the time of this writing, the most current stable version is 1.27.4.
+
+The following command will download the 1.27.4 release and save the executable file at /usr/local/bin/docker-compose, which will make this software globally accessible as docker-compose:
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ 
+Next, set the correct permissions so that the docker-compose command is executable:
+
+sudo chmod +x /usr/local/bin/docker-compose
+ 
+To verify that the installation was successful, you can run:
+
+docker-compose --version
+ 
+You’ll see output similar to this:
+
+Output
+docker-compose version 1.27.4, build 40524192
+Docker Compose is now successfully installed on your system. In the next section, we’ll see how to set up a docker-compose.yml file and get a containerized environment up and running with this tool.
+
+git clone https://github.com/TheHive-Project/Docker-Templates.git
+cd Docker-Templates/docker/thehive4-cortex3-misp-shuffle
+mkdir elasticsearch_data
+mkdir elasticsearch_logs
+sudo docker-compose up
+(just before docker-compose up I edited docker-compose.yml to set the ip of my machine just where there is misp hostname, otherwise issue with certs)
+
+
