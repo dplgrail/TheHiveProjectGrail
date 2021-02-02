@@ -121,5 +121,8 @@ mkdir elasticsearch_data
 mkdir elasticsearch_logs
 sudo docker-compose up
 (just before docker-compose up I edited docker-compose.yml to set the ip of my machine just where there is misp hostname, otherwise issue with certs)
+Ejemplo:
+    environment:
+      - "HOSTNAME=https://10.0.2.15"
 
 
