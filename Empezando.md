@@ -125,4 +125,4 @@ Ejemplo:
     environment:
       - "HOSTNAME=https://10.0.2.15"
 
-
+En settings/configuración he cambiado el tiempo de suspender la màquina.
